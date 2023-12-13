@@ -1,0 +1,4387 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "feedback",
+              "elicitationRequired": false,
+              "type": "feedback",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "action",
+              "elicitationRequired": false,
+              "type": "action",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "target",
+              "elicitationRequired": false,
+              "validations": [
+                {
+                  "values": [
+                    "This prompt is a dummy included only to ensure there is a dialog model present."
+                  ],
+                  "type": "isNotInSet",
+                  "prompt": "Slot.Validation.564246223579.1467418044248.678461230495"
+                }
+              ],
+              "type": "target",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "head",
+              "elicitationRequired": false,
+              "type": "head",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "tail",
+              "elicitationRequired": false,
+              "type": "tail",
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ],
+          "name": "GeneralControlIntent",
+          "delegationStrategy": "SKILL_RESPONSE",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "feedback",
+              "elicitationRequired": false,
+              "type": "feedback",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "action",
+              "elicitationRequired": false,
+              "type": "action",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "target",
+              "elicitationRequired": false,
+              "type": "target",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "preposition",
+              "elicitationRequired": false,
+              "type": "preposition",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "head",
+              "elicitationRequired": false,
+              "type": "head",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "tail",
+              "elicitationRequired": false,
+              "type": "tail",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "AMAZON.NUMBER",
+              "elicitationRequired": false,
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ],
+          "name": "AMAZON_NUMBER_ValueControlIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "action",
+              "elicitationRequired": false,
+              "type": "action",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "product",
+              "elicitationRequired": false,
+              "type": "Product",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "count",
+              "elicitationRequired": false,
+              "validations": [
+                {
+                  "type": "isGreaterThan",
+                  "prompt": "Slot.Validation.1410373627522.313096995747.1009281314333",
+                  "value": "0"
+                },
+                {
+                  "type": "isLessThanOrEqualTo",
+                  "prompt": "Slot.Validation.1410373627522.313096995747.957322659387",
+                  "value": "50"
+                }
+              ],
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "cart",
+              "elicitationRequired": false,
+              "type": "cart",
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ],
+          "name": "AddItemIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "SKILL_RESPONSE"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "feedback",
+              "type": "feedback"
+            },
+            {
+              "name": "action",
+              "type": "action"
+            },
+            {
+              "name": "target",
+              "type": "target"
+            },
+            {
+              "name": "head",
+              "type": "head"
+            },
+            {
+              "name": "tail",
+              "type": "tail"
+            }
+          ],
+          "name": "GeneralControlIntent",
+          "samples": [
+            "{feedback} {action}",
+            "{feedback} {action} {target}",
+            "{feedback} {tail}",
+            "{feedback} {action} {tail}",
+            "{feedback} {action} {target} {tail}",
+            "{action} {target}",
+            "{head} {action}",
+            "{head} {action} {target}",
+            "{action} {tail}",
+            "{action} {target} {tail}",
+            "{head} {action} {tail}",
+            "{head} {action} {target} {tail}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "feedback",
+              "type": "feedback"
+            },
+            {
+              "name": "action",
+              "type": "action"
+            },
+            {
+              "name": "target",
+              "type": "target"
+            },
+            {
+              "name": "preposition",
+              "type": "preposition"
+            },
+            {
+              "name": "head",
+              "type": "head"
+            },
+            {
+              "name": "tail",
+              "type": "tail"
+            },
+            {
+              "name": "Category",
+              "type": "Category"
+            }
+          ],
+          "name": "Category_ValueControlIntent",
+          "samples": [
+            "{Category}",
+            "{action} {Category}",
+            "{action} {preposition} {Category}",
+            "{action} {target} {preposition} {Category}",
+            "{target} {preposition} {Category}",
+            "{feedback} {Category}",
+            "{feedback} {action} {Category}",
+            "{feedback} {preposition} {Category}",
+            "{feedback} {action} {preposition} {Category}",
+            "{feedback} {action} {target} {preposition} {Category}",
+            "{feedback} {target} {preposition} {Category}",
+            "{head} {Category}",
+            "{head} {action} {Category}",
+            "{head} {action} {preposition} {Category}",
+            "{head} {action} {target} {preposition} {Category}",
+            "{head} {target} {preposition} {Category}",
+            "{Category} {tail}",
+            "{preposition} {Category} {tail}",
+            "{action} {preposition} {Category} {tail}",
+            "{action} {target} {preposition} {Category} {tail}",
+            "{target} {preposition} {Category} {tail}",
+            "{feedback} {Category} {tail}",
+            "{feedback} {preposition} {Category} {tail}",
+            "{feedback} {action} {Category} {tail}",
+            "{feedback} {action} {preposition} {Category} {tail}",
+            "{feedback} {action} {target} {preposition} {Category} {tail}",
+            "{feedback} {target} {preposition} {Category} {tail}",
+            "{head} {Category} {tail}",
+            "{head} {preposition} {Category} {tail}",
+            "{head} {action} {Category} {tail}",
+            "{head} {action} {preposition} {Category} {tail}",
+            "{head} {target} {preposition} {Category} {tail}",
+            "{head} {action} {target} {preposition} {Category} {tail}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "feedback",
+              "type": "feedback"
+            },
+            {
+              "name": "action",
+              "type": "action"
+            },
+            {
+              "name": "target",
+              "type": "target"
+            },
+            {
+              "name": "AMAZON.Ordinal",
+              "type": "AMAZON.Ordinal"
+            },
+            {
+              "name": "preposition",
+              "type": "preposition"
+            },
+            {
+              "name": "head",
+              "type": "head"
+            },
+            {
+              "name": "tail",
+              "type": "tail"
+            }
+          ],
+          "name": "OrdinalControlIntent",
+          "samples": [
+            "{AMAZON.Ordinal}",
+            "{preposition} {AMAZON.Ordinal}",
+            "{AMAZON.Ordinal} one",
+            "{preposition} {AMAZON.Ordinal} one",
+            "{action} {AMAZON.Ordinal}",
+            "{action} {preposition} {AMAZON.Ordinal}",
+            "{action} {preposition} {AMAZON.Ordinal} one",
+            "{action} {target} {preposition} {AMAZON.Ordinal}",
+            "{target} {preposition} {AMAZON.Ordinal}",
+            "{feedback} {AMAZON.Ordinal}",
+            "{feedback} {preposition} {AMAZON.Ordinal}",
+            "{feedback} {AMAZON.Ordinal} one",
+            "{feedback} {preposition} {AMAZON.Ordinal} one",
+            "{feedback} {action} {AMAZON.Ordinal}",
+            "{feedback} {action} {preposition} {AMAZON.Ordinal}",
+            "{feedback} {action} {preposition} {AMAZON.Ordinal} one",
+            "{feedback} {action} {target} {preposition} {AMAZON.Ordinal}",
+            "{feedback} {target} {preposition} {AMAZON.Ordinal}",
+            "{head} {preposition} {AMAZON.Ordinal}",
+            "{head} {preposition} {AMAZON.Ordinal} one",
+            "{head} {action} {preposition} {AMAZON.Ordinal}",
+            "{head} {action} {target} {preposition} {AMAZON.Ordinal}",
+            "{head} {target} {preposition} {AMAZON.Ordinal}",
+            "{AMAZON.Ordinal} {tail}",
+            "{preposition} {AMAZON.Ordinal} {tail}",
+            "{AMAZON.Ordinal} one {tail}",
+            "{preposition} {AMAZON.Ordinal} one {tail}",
+            "{action} {AMAZON.Ordinal} {tail}",
+            "{action} {target} {preposition} {AMAZON.Ordinal} {tail}",
+            "{target} {preposition} {AMAZON.Ordinal} {tail}",
+            "{feedback} {AMAZON.Ordinal} {tail}",
+            "{feedback} {preposition} {AMAZON.Ordinal} {tail}",
+            "{feedback} {AMAZON.Ordinal} one {tail}",
+            "{feedback} {preposition} {AMAZON.Ordinal} one {tail}",
+            "{feedback} {action} {AMAZON.Ordinal} {tail}",
+            "{feedback} {action} {preposition} {AMAZON.Ordinal} {tail}",
+            "{feedback} {action} {preposition} {AMAZON.Ordinal} one {tail}",
+            "{feedback} {action} {target} {preposition} {AMAZON.Ordinal} {tail}",
+            "{feedback} {target} {preposition} {AMAZON.Ordinal} {tail}",
+            "{head} {AMAZON.Ordinal} {tail}",
+            "{head} {preposition} {AMAZON.Ordinal} {tail}",
+            "{head} {preposition} {AMAZON.Ordinal} one {tail}",
+            "{head} {action} {preposition} {AMAZON.Ordinal} {tail}",
+            "{head} {action} {preposition} {AMAZON.Ordinal} one {tail}",
+            "{head} {target} {preposition} {AMAZON.Ordinal} {tail}",
+            "{head} {action} {target} {preposition} {AMAZON.Ordinal} {tail}"
+          ]
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "feedback",
+              "type": "feedback"
+            },
+            {
+              "name": "action",
+              "type": "action"
+            },
+            {
+              "name": "target",
+              "type": "target"
+            },
+            {
+              "name": "preposition",
+              "type": "preposition"
+            },
+            {
+              "name": "head",
+              "type": "head"
+            },
+            {
+              "name": "tail",
+              "type": "tail"
+            },
+            {
+              "name": "Product",
+              "type": "Product"
+            }
+          ],
+          "name": "Product_ValueControlIntent",
+          "samples": [
+            "{Product}",
+            "{action} {Product}",
+            "{action} {preposition} {Product}",
+            "{action} {target} {preposition} {Product}",
+            "{target} {preposition} {Product}",
+            "{feedback} {Product}",
+            "{feedback} {action} {Product}",
+            "{feedback} {preposition} {Product}",
+            "{feedback} {action} {preposition} {Product}",
+            "{feedback} {action} {target} {preposition} {Product}",
+            "{feedback} {target} {preposition} {Product}",
+            "{head} {Product}",
+            "{head} {action} {Product}",
+            "{head} {action} {preposition} {Product}",
+            "{head} {action} {target} {preposition} {Product}",
+            "{head} {target} {preposition} {Product}",
+            "{Product} {tail}",
+            "{preposition} {Product} {tail}",
+            "{action} {preposition} {Product} {tail}",
+            "{action} {target} {preposition} {Product} {tail}",
+            "{target} {preposition} {Product} {tail}",
+            "{feedback} {Product} {tail}",
+            "{feedback} {preposition} {Product} {tail}",
+            "{feedback} {action} {Product} {tail}",
+            "{feedback} {action} {preposition} {Product} {tail}",
+            "{feedback} {action} {target} {preposition} {Product} {tail}",
+            "{feedback} {target} {preposition} {Product} {tail}",
+            "{head} {Product} {tail}",
+            "{head} {preposition} {Product} {tail}",
+            "{head} {action} {Product} {tail}",
+            "{head} {action} {preposition} {Product} {tail}",
+            "{head} {target} {preposition} {Product} {tail}",
+            "{head} {action} {target} {preposition} {Product} {tail}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "feedback",
+              "type": "feedback"
+            },
+            {
+              "name": "action",
+              "type": "action"
+            },
+            {
+              "name": "target",
+              "type": "target"
+            },
+            {
+              "name": "preposition",
+              "type": "preposition"
+            },
+            {
+              "name": "head",
+              "type": "head"
+            },
+            {
+              "name": "tail",
+              "type": "tail"
+            },
+            {
+              "name": "AMAZON.NUMBER",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "AMAZON_NUMBER_ValueControlIntent",
+          "samples": [
+            "{AMAZON.NUMBER}",
+            "{action} {AMAZON.NUMBER}",
+            "{action} {preposition} {AMAZON.NUMBER}",
+            "{action} {target} {preposition} {AMAZON.NUMBER}",
+            "{target} {preposition} {AMAZON.NUMBER}",
+            "{feedback} {AMAZON.NUMBER}",
+            "{feedback} {action} {AMAZON.NUMBER}",
+            "{feedback} {preposition} {AMAZON.NUMBER}",
+            "{feedback} {action} {preposition} {AMAZON.NUMBER}",
+            "{feedback} {action} {target} {preposition} {AMAZON.NUMBER}",
+            "{feedback} {target} {preposition} {AMAZON.NUMBER}",
+            "{head} {AMAZON.NUMBER}",
+            "{head} {action} {AMAZON.NUMBER}",
+            "{head} {action} {preposition} {AMAZON.NUMBER}",
+            "{head} {action} {target} {preposition} {AMAZON.NUMBER}",
+            "{head} {target} {preposition} {AMAZON.NUMBER}",
+            "{AMAZON.NUMBER} {tail}",
+            "{preposition} {AMAZON.NUMBER} {tail}",
+            "{action} {preposition} {AMAZON.NUMBER} {tail}",
+            "{action} {target} {preposition} {AMAZON.NUMBER} {tail}",
+            "{target} {preposition} {AMAZON.NUMBER} {tail}",
+            "{feedback} {AMAZON.NUMBER} {tail}",
+            "{feedback} {preposition} {AMAZON.NUMBER} {tail}",
+            "{feedback} {action} {AMAZON.NUMBER} {tail}",
+            "{feedback} {action} {preposition} {AMAZON.NUMBER} {tail}",
+            "{feedback} {action} {target} {preposition} {AMAZON.NUMBER} {tail}",
+            "{feedback} {target} {preposition} {AMAZON.NUMBER} {tail}",
+            "{head} {AMAZON.NUMBER} {tail}",
+            "{head} {preposition} {AMAZON.NUMBER} {tail}",
+            "{head} {action} {AMAZON.NUMBER} {tail}",
+            "{head} {action} {preposition} {AMAZON.NUMBER} {tail}",
+            "{head} {target} {preposition} {AMAZON.NUMBER} {tail}",
+            "{head} {action} {target} {preposition} {AMAZON.NUMBER} {tail}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "feedback",
+              "type": "feedback"
+            },
+            {
+              "name": "action",
+              "type": "action"
+            },
+            {
+              "name": "target",
+              "type": "target"
+            },
+            {
+              "name": "preposition",
+              "type": "preposition"
+            },
+            {
+              "name": "head",
+              "type": "head"
+            },
+            {
+              "name": "tail",
+              "type": "tail"
+            },
+            {
+              "name": "AMAZON.DATE",
+              "type": "AMAZON.DATE"
+            }
+          ],
+          "name": "AMAZON_DATE_ValueControlIntent",
+          "samples": [
+            "{AMAZON.DATE}",
+            "{action} {AMAZON.DATE}",
+            "{action} {preposition} {AMAZON.DATE}",
+            "{action} {target} {preposition} {AMAZON.DATE}",
+            "{target} {preposition} {AMAZON.DATE}",
+            "{feedback} {AMAZON.DATE}",
+            "{feedback} {action} {AMAZON.DATE}",
+            "{feedback} {preposition} {AMAZON.DATE}",
+            "{feedback} {action} {preposition} {AMAZON.DATE}",
+            "{feedback} {action} {target} {preposition} {AMAZON.DATE}",
+            "{feedback} {target} {preposition} {AMAZON.DATE}",
+            "{head} {AMAZON.DATE}",
+            "{head} {action} {AMAZON.DATE}",
+            "{head} {action} {preposition} {AMAZON.DATE}",
+            "{head} {action} {target} {preposition} {AMAZON.DATE}",
+            "{head} {target} {preposition} {AMAZON.DATE}",
+            "{AMAZON.DATE} {tail}",
+            "{preposition} {AMAZON.DATE} {tail}",
+            "{action} {preposition} {AMAZON.DATE} {tail}",
+            "{action} {target} {preposition} {AMAZON.DATE} {tail}",
+            "{target} {preposition} {AMAZON.DATE} {tail}",
+            "{feedback} {AMAZON.DATE} {tail}",
+            "{feedback} {preposition} {AMAZON.DATE} {tail}",
+            "{feedback} {action} {AMAZON.DATE} {tail}",
+            "{feedback} {action} {preposition} {AMAZON.DATE} {tail}",
+            "{feedback} {action} {target} {preposition} {AMAZON.DATE} {tail}",
+            "{feedback} {target} {preposition} {AMAZON.DATE} {tail}",
+            "{head} {AMAZON.DATE} {tail}",
+            "{head} {preposition} {AMAZON.DATE} {tail}",
+            "{head} {action} {AMAZON.DATE} {tail}",
+            "{head} {action} {preposition} {AMAZON.DATE} {tail}",
+            "{head} {target} {preposition} {AMAZON.DATE} {tail}",
+            "{head} {action} {target} {preposition} {AMAZON.DATE} {tail}"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": [
+            "don\u0027t",
+            "cancel",
+            "do not"
+          ]
+        },
+        {
+          "name": "AMAZON.MoreIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateSettingsIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PageUpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PageDownIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PreviousIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ScrollRightIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ScrollDownIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ScrollLeftIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ScrollUpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "cart",
+              "type": "cart"
+            }
+          ],
+          "name": "CheckCartIntent",
+          "samples": [
+            "what items do I have",
+            "what is in {cart}",
+            "what\u0027s in {cart}",
+            "review",
+            "check {cart}",
+            "check {cart} items",
+            "review {cart}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "action",
+              "type": "action"
+            },
+            {
+              "name": "product",
+              "type": "Product"
+            },
+            {
+              "name": "count",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "cart",
+              "type": "cart"
+            },
+            {
+              "name": "preposition",
+              "type": "preposition"
+            },
+            {
+              "name": "head",
+              "type": "head"
+            },
+            {
+              "name": "tail",
+              "type": "tail"
+            }
+          ],
+          "name": "AddItemIntent",
+          "samples": [
+            "{action} {count} {product}",
+            "{action} {count} {product} to {cart}",
+            "{action} {count} {product} in {cart}",
+            "{count} {product}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "action",
+              "type": "action"
+            },
+            {
+              "multipleValues": {
+                "enabled": true
+              },
+              "name": "product",
+              "type": "Product"
+            },
+            {
+              "name": "preposition",
+              "type": "preposition"
+            },
+            {
+              "name": "target",
+              "type": "target"
+            },
+            {
+              "name": "head",
+              "type": "head"
+            },
+            {
+              "name": "tail",
+              "type": "tail"
+            }
+          ],
+          "name": "AddProductIntent",
+          "samples": [
+            "{action} {product} {preposition} {target}",
+            "{action} {product}",
+            "{head} {action} {product}",
+            "{action} {product} {tail}",
+            "{head} {action} {product} {tail}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "multipleValues": {
+                "enabled": false
+              },
+              "name": "product",
+              "type": "Product"
+            },
+            {
+              "name": "preposition",
+              "type": "preposition"
+            },
+            {
+              "name": "target",
+              "type": "target"
+            },
+            {
+              "name": "head",
+              "type": "head"
+            },
+            {
+              "name": "tail",
+              "type": "tail"
+            },
+            {
+              "name": "delete",
+              "type": "delete"
+            }
+          ],
+          "name": "RemoveProductIntent",
+          "samples": [
+            "{delete} {product} {preposition} {target}",
+            "{delete} {product}",
+            "{head} {delete} {product}",
+            "{delete} {product} {tail}",
+            "{head} {delete} {product} {tail}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "product",
+              "type": "Product"
+            },
+            {
+              "name": "count",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "cart",
+              "type": "cart"
+            },
+            {
+              "name": "preposition",
+              "type": "preposition"
+            },
+            {
+              "name": "head",
+              "type": "head"
+            },
+            {
+              "name": "tail",
+              "type": "tail"
+            },
+            {
+              "name": "delete",
+              "type": "delete"
+            }
+          ],
+          "name": "RemoveItemIntent",
+          "samples": [
+            "{delete} {count} {product}",
+            "{delete} {count} {product} {preposition} {cart}",
+            "{delete} {product} {preposition} {cart}",
+            "{head} {delete} items {preposition} {cart} {tail}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "yes I do",
+                  "okay",
+                  "kay",
+                  "k",
+                  "yes",
+                  "yup",
+                  "yep",
+                  "yes",
+                  "ya",
+                  "yes I want",
+                  "yes I need",
+                  "yes I said",
+                  "yes that\u0027s right",
+                  "that\u0027s correct",
+                  "ah yes",
+                  "affirmative",
+                  "makes sense",
+                  "right",
+                  "sounds good",
+                  "sure",
+                  "that\u0027s right",
+                  "totally",
+                  "works for me",
+                  "yeah",
+                  "yeah ok",
+                  "yes ok",
+                  "yes that\u0027s good",
+                  "yes sure",
+                  "yes good",
+                  "yes exactly",
+                  "exactly",
+                  "yes I do",
+                  "absolutely",
+                  "yes absolutely",
+                  "fine",
+                  "yes fine"
+                ],
+                "value": "affirm"
+              },
+              "id": "affirm"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "no",
+                  "no no",
+                  "no no no",
+                  "no no no no",
+                  "no I want",
+                  "no I said",
+                  "no not that",
+                  "not even close",
+                  "nope",
+                  "incorrect",
+                  "you misunderstood",
+                  "you have it wrong",
+                  "that\u0027s wrong",
+                  "thats wrong",
+                  "wrong",
+                  "absolutely not",
+                  "I don\u0027t think so",
+                  "naw",
+                  "naw",
+                  "negative",
+                  "never",
+                  "no alexa",
+                  "no amazon",
+                  "no incorrect",
+                  "no that\u0027s wrong",
+                  "no it\u0027s not",
+                  "definitely not",
+                  "no definitely not",
+                  "not ever",
+                  "oh no",
+                  "ohh no",
+                  "o no no",
+                  "please no",
+                  "that\u0027s not what I want",
+                  "that was totally wrong",
+                  "that is totally wrong",
+                  "that is wrong"
+                ],
+                "value": "disaffirm"
+              },
+              "id": "disaffirm"
+            }
+          ],
+          "name": "feedback"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "I",
+                  "I\u0027ll",
+                  "please",
+                  "thanks",
+                  "thank you",
+                  "I will",
+                  "I want",
+                  "I choose",
+                  "I want you to",
+                  "I want you to just",
+                  "I need",
+                  "I need you to",
+                  "I need you to just",
+                  "I think",
+                  "I think just",
+                  "I think I want",
+                  "I think I need",
+                  "I think you can",
+                  "I think you can just",
+                  "I think that",
+                  "I\u0027m pretty sure",
+                  "I\u0027m pretty sure that",
+                  "I am pretty sure",
+                  "I am pretty sure that",
+                  "I believe",
+                  "I believe that",
+                  "You can",
+                  "You can just",
+                  "You can just go ahead and",
+                  "You should",
+                  "You should just",
+                  "Just",
+                  "Go ahead and",
+                  "Just go ahead",
+                  "Just go ahead and"
+                ],
+                "value": "head"
+              },
+              "id": "head"
+            }
+          ],
+          "name": "head"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "please",
+                  "thanks",
+                  "please thanks",
+                  "will be fine",
+                  "will be fine thanks",
+                  "is good",
+                  "is good thanks",
+                  "will be good",
+                  "will be good thanks",
+                  "is plenty",
+                  "is plenty thanks",
+                  "will be plenty",
+                  "will be plenty thanks",
+                  "is great",
+                  "is great thanks",
+                  "will be great",
+                  "will be great thanks",
+                  "will work",
+                  "will work thanks",
+                  "is correct",
+                  "is correct thanks",
+                  "is right",
+                  "is right thanks",
+                  "at a time"
+                ],
+                "value": "tail"
+              },
+              "id": "tail"
+            }
+          ],
+          "name": "tail"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "set",
+                  "assign",
+                  "make",
+                  "will be",
+                  "must be",
+                  "must be set to",
+                  "must be equal to",
+                  "should be",
+                  "should be",
+                  "should be set to",
+                  "should be equal to",
+                  "needs to be",
+                  "needs to be set to"
+                ],
+                "value": "set"
+              },
+              "id": "set"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "update",
+                  "move",
+                  "alter",
+                  "change",
+                  "switch",
+                  "should be",
+                  "should be changed to",
+                  "should be changed",
+                  "should be updated to",
+                  "should be updated",
+                  "should be altered to",
+                  "should be altered",
+                  "needs to be changed to",
+                  "needs to be changed",
+                  "needs to be updated to",
+                  "needs to be updated",
+                  "needs to be altered to",
+                  "needs to be altered"
+                ],
+                "value": "change"
+              },
+              "id": "change"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "select",
+                  "choose",
+                  "take",
+                  "pick"
+                ],
+                "value": "select"
+              },
+              "id": "select"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "add",
+                  "add more",
+                  "add some"
+                ],
+                "value": "add"
+              },
+              "id": "add"
+            }
+          ],
+          "name": "action"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "it",
+                  "this",
+                  "that"
+                ],
+                "value": "it"
+              },
+              "id": "it"
+            },
+            {
+              "name": {
+                "value": "category"
+              },
+              "id": "category"
+            },
+            {
+              "name": {
+                "value": "product"
+              },
+              "id": "product"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "quantities of",
+                  "counts of",
+                  "count of",
+                  "quantity of",
+                  "number of",
+                  "item count",
+                  "number of items"
+                ],
+                "value": "count"
+              },
+              "id": "count"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "delivery date",
+                  "date to deliver"
+                ],
+                "value": "deliveryDate"
+              },
+              "id": "deliveryDate"
+            }
+          ],
+          "name": "target"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "the",
+                  "to",
+                  "to the",
+                  "to be",
+                  "to go",
+                  "in",
+                  "in to",
+                  "into",
+                  "is",
+                  "equal to",
+                  "to be equal to",
+                  "also",
+                  "to also be",
+                  "to be also",
+                  "from",
+                  "until"
+                ],
+                "value": "preposition"
+              },
+              "id": "preposition"
+            }
+          ],
+          "name": "preposition"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "dryfruits"
+                ],
+                "value": "dryfruit"
+              },
+              "id": "dryfruit"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "seafoods"
+                ],
+                "value": "seafood"
+              },
+              "id": "seafood"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "condiments"
+                ],
+                "value": "condiment"
+              },
+              "id": "condiment"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "bakeries"
+                ],
+                "value": "bakery"
+              },
+              "id": "bakery"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cereals"
+                ],
+                "value": "cereal"
+              },
+              "id": "cereal"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "rices"
+                ],
+                "value": "rice "
+              },
+              "id": "rice"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pastas"
+                ],
+                "value": "pasta"
+              },
+              "id": "pasta"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pet goods",
+                  "pet stuff",
+                  "pet"
+                ],
+                "value": "pet care"
+              },
+              "id": "pet"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "baby goods",
+                  "baby item",
+                  "baby items",
+                  "baby"
+                ],
+                "value": "baby care"
+              },
+              "id": "baby"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "household supply",
+                  "household"
+                ],
+                "value": "household supplies"
+              },
+              "id": "household"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "health supplies",
+                  "medicines",
+                  "meds",
+                  "health"
+                ],
+                "value": "health care"
+              },
+              "id": "health"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "personal supplies",
+                  "well being",
+                  "self care",
+                  "personal"
+                ],
+                "value": "personal care"
+              },
+              "id": "personal"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "frozen goods",
+                  "frozen stuff",
+                  "frozen foods",
+                  "frozen"
+                ],
+                "value": "frozen food"
+              },
+              "id": "frozen"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "baking ingredients",
+                  "baking stuff",
+                  "baking goods"
+                ],
+                "value": "baking"
+              },
+              "id": "baking"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "beverages"
+                ],
+                "value": "beverage"
+              },
+              "id": "beverage"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "snacks"
+                ],
+                "value": "snack"
+              },
+              "id": "snack"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "delis"
+                ],
+                "value": "deli"
+              },
+              "id": "deli"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "meats"
+                ],
+                "value": "meat"
+              },
+              "id": "meat"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "dairies"
+                ],
+                "value": "dairy"
+              },
+              "id": "dairy"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "fruits"
+                ],
+                "value": "fruit"
+              },
+              "id": "fruit"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "vegetables",
+                  "veggies"
+                ],
+                "value": "vegetable"
+              },
+              "id": "vegetable"
+            }
+          ],
+          "name": "Category"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "salts"
+                ],
+                "value": "salt"
+              },
+              "id": "salt"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "tubelights"
+                ],
+                "value": "tubelight"
+              },
+              "id": "tubelight"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "bulbs",
+                  "bulb",
+                  "lightbulbs"
+                ],
+                "value": "lightbulb"
+              },
+              "id": "lightbulb"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "scissors"
+                ],
+                "value": "scissor"
+              },
+              "id": "scissor"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pencils"
+                ],
+                "value": "pencil"
+              },
+              "id": "pencil"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pens"
+                ],
+                "value": "pen"
+              },
+              "id": "pen"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "whisks"
+                ],
+                "value": "whisk"
+              },
+              "id": "whisk"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "graters"
+                ],
+                "value": "grater"
+              },
+              "id": "grater"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pans"
+                ],
+                "value": "pan"
+              },
+              "id": "pan"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "buckets"
+                ],
+                "value": "bucket"
+              },
+              "id": "bucket"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "dustbins",
+                  "dustbin",
+                  "bins",
+                  "bin",
+                  "garbage bins"
+                ],
+                "value": "garbage bin"
+              },
+              "id": "garbage_bin"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cutting boards"
+                ],
+                "value": "cutting board"
+              },
+              "id": "cutting_board"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "rolling pins"
+                ],
+                "value": "rolling pin"
+              },
+              "id": "rolling_pin"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "peelers"
+                ],
+                "value": "peeler"
+              },
+              "id": "peeler"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "blenders"
+                ],
+                "value": "blender"
+              },
+              "id": "blender"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "body lotions"
+                ],
+                "value": "body lotion"
+              },
+              "id": "body_lotion"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "kala jeera"
+                ],
+                "value": "black cumin"
+              },
+              "id": "black_cumin"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "red rices"
+                ],
+                "value": "red rice"
+              },
+              "id": "red_rice"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "black rices"
+                ],
+                "value": "black rice"
+              },
+              "id": "black_rice"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "brown rices"
+                ],
+                "value": "brown rice"
+              },
+              "id": "brown_rice"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "jasmine rices"
+                ],
+                "value": "jasmine rice"
+              },
+              "id": "jasmine_rice"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "basmati rices"
+                ],
+                "value": "basmati rice"
+              },
+              "id": "basmati_rice"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "white wines"
+                ],
+                "value": "white wine"
+              },
+              "id": "white_wine"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "red wines"
+                ],
+                "value": "red wine"
+              },
+              "id": "red_wine"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "wines"
+                ],
+                "value": "wine"
+              },
+              "id": "wine"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "lasagnas"
+                ],
+                "value": "lasagna"
+              },
+              "id": "lasagna"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "spaghettis"
+                ],
+                "value": "spaghetti"
+              },
+              "id": "spaghetti"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "rigatonis"
+                ],
+                "value": "rigatoni"
+              },
+              "id": "rigatoni"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "raviolis"
+                ],
+                "value": "ravioli"
+              },
+              "id": "ravioli"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "macaronis"
+                ],
+                "value": "macaroni"
+              },
+              "id": "macaroni"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "tagliatelles"
+                ],
+                "value": "tagliatelle"
+              },
+              "id": "tagliatelle"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "tortellinis"
+                ],
+                "value": "tortellini"
+              },
+              "id": "tortellini"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "fettuccines"
+                ],
+                "value": "fettuccine"
+              },
+              "id": "fettuccine"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pennes"
+                ],
+                "value": "penne"
+              },
+              "id": "penne"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "linguinis"
+                ],
+                "value": "linguini"
+              },
+              "id": "linguini"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "paneer",
+                  "cottage cheeses"
+                ],
+                "value": "cottage cheese"
+              },
+              "id": "cottage_cheese"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "mixed jams"
+                ],
+                "value": "mixed jam"
+              },
+              "id": "mixed_jam"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "fruit jams"
+                ],
+                "value": "fruit jam"
+              },
+              "id": "fruit_jam"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "frozen fishes"
+                ],
+                "value": "frozen fish"
+              },
+              "id": "frozen_fish"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "frozen sausages"
+                ],
+                "value": "frozen sausage"
+              },
+              "id": "frozen_sausage"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "frozen bacons"
+                ],
+                "value": "frozen bacon"
+              },
+              "id": "frozen_bacon"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "frozen chicken"
+                ],
+                "value": "frozen chicken"
+              },
+              "id": "frozen_chicken"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "plates"
+                ],
+                "value": "plate"
+              },
+              "id": "plate"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cups"
+                ],
+                "value": "cup"
+              },
+              "id": "cup"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "knives"
+                ],
+                "value": "knife"
+              },
+              "id": "knife"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "serums"
+                ],
+                "value": "serum"
+              },
+              "id": "serum"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "hand lotions"
+                ],
+                "value": "hand lotion"
+              },
+              "id": "hand_lotion"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "face lotions"
+                ],
+                "value": "face lotion"
+              },
+              "id": "face_lotion"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "forks"
+                ],
+                "value": "fork"
+              },
+              "id": "fork"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "bowls"
+                ],
+                "value": "bowl"
+              },
+              "id": "bowl"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "glasses"
+                ],
+                "value": "glass"
+              },
+              "id": "glass"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "spoons"
+                ],
+                "value": "spoon"
+              },
+              "id": "spoon"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "body serums"
+                ],
+                "value": "body serum"
+              },
+              "id": "body_serum"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "face serums"
+                ],
+                "value": "face serum"
+              },
+              "id": "face_serum"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "red chili sauces"
+                ],
+                "value": "red chili sauce"
+              },
+              "id": "red_chili_sauce"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "dahi",
+                  "sourmilks"
+                ],
+                "value": "sourmilk"
+              },
+              "id": "sourmilk"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "aftershaves"
+                ],
+                "value": "aftershave"
+              },
+              "id": "aftershave"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "steaks"
+                ],
+                "value": "steak"
+              },
+              "id": "steak"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "brown breads"
+                ],
+                "value": "brown bread"
+              },
+              "id": "brown_bread"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "whole wheat breads"
+                ],
+                "value": "whole wheat bread"
+              },
+              "id": "whole_wheat_bread"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "white breads"
+                ],
+                "value": "white bread"
+              },
+              "id": "white_bread"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cheeses"
+                ],
+                "value": "cheese"
+              },
+              "id": "cheese"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "yogurts"
+                ],
+                "value": "yogurt"
+              },
+              "id": "yogurt"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cookies"
+                ],
+                "value": "cookie"
+              },
+              "id": "cookie"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "bagels"
+                ],
+                "value": "bagel"
+              },
+              "id": "bagel"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pies"
+                ],
+                "value": "pie"
+              },
+              "id": "pie"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "bacons"
+                ],
+                "value": "bacon"
+              },
+              "id": "bacon"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "sausages"
+                ],
+                "value": "sausage"
+              },
+              "id": "sausage"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "porks"
+                ],
+                "value": "pork"
+              },
+              "id": "pork"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "beefs"
+                ],
+                "value": "beef"
+              },
+              "id": "beef"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "chickens"
+                ],
+                "value": "chicken"
+              },
+              "id": "chicken"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "prawns"
+                ],
+                "value": "prawn"
+              },
+              "id": "prawn"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "oysters"
+                ],
+                "value": "oyster"
+              },
+              "id": "oyster"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "clams"
+                ],
+                "value": "clam"
+              },
+              "id": "clam"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "octopuses"
+                ],
+                "value": "octopus"
+              },
+              "id": "octopus"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "salmons"
+                ],
+                "value": "salmon"
+              },
+              "id": "salmon"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "tunas"
+                ],
+                "value": "tuna"
+              },
+              "id": "tuna"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cods"
+                ],
+                "value": "cod"
+              },
+              "id": "cod"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "crabs"
+                ],
+                "value": "crab"
+              },
+              "id": "crab"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "fishes"
+                ],
+                "value": "fish"
+              },
+              "id": "fish"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "shrimps"
+                ],
+                "value": "shrimp"
+              },
+              "id": "shrimp"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "turkeys"
+                ],
+                "value": "turkey"
+              },
+              "id": "turkey"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "hams"
+                ],
+                "value": "ham"
+              },
+              "id": "ham"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "salamis"
+                ],
+                "value": "salami"
+              },
+              "id": "salami"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "kid powders",
+                  "kid powder",
+                  "baby powders"
+                ],
+                "value": "baby powder"
+              },
+              "id": "baby_powder"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "baby lotions"
+                ],
+                "value": "baby lotion"
+              },
+              "id": "baby_lotion"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "wet wipes"
+                ],
+                "value": "wet wipe"
+              },
+              "id": "wet_wipe"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "diapers"
+                ],
+                "value": "diaper"
+              },
+              "id": "diaper"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "baby foods"
+                ],
+                "value": "baby food"
+              },
+              "id": "baby_food"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "antacids"
+                ],
+                "value": "antacid"
+              },
+              "id": "antacid"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "painkillers"
+                ],
+                "value": "painkiller"
+              },
+              "id": "painkiller"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cleaning alcohols"
+                ],
+                "value": "cleaning alcohol"
+              },
+              "id": "cleaning_alcohol"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "band aids"
+                ],
+                "value": "band aid"
+              },
+              "id": "band_aid"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "salines"
+                ],
+                "value": "saline"
+              },
+              "id": "saline"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pizzas"
+                ],
+                "value": "pizza"
+              },
+              "id": "pizza"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "soups"
+                ],
+                "value": "soup"
+              },
+              "id": "soup"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pretzels"
+                ],
+                "value": "pretzel"
+              },
+              "id": "pretzel"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "crackers"
+                ],
+                "value": "cracker"
+              },
+              "id": "cracker"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "popcorns"
+                ],
+                "value": "popcorn"
+              },
+              "id": "popcorn"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "oreganos"
+                ],
+                "value": "oregano"
+              },
+              "id": "oregano"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "toothpicks"
+                ],
+                "value": "toothpick"
+              },
+              "id": "toothpick"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "combs"
+                ],
+                "value": "comb"
+              },
+              "id": "comb"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "razors"
+                ],
+                "value": "razor"
+              },
+              "id": "razor"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "shaving creams"
+                ],
+                "value": "shaving cream"
+              },
+              "id": "shaving_cream"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "moisturizers"
+                ],
+                "value": "moisturizer"
+              },
+              "id": "moisturizer"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "loofahs"
+                ],
+                "value": "loofah"
+              },
+              "id": "loofah"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "oils"
+                ],
+                "value": "oil"
+              },
+              "id": "oil"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "ghees"
+                ],
+                "value": "ghee"
+              },
+              "id": "ghee"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "chocolate spread",
+                  "nutella spread"
+                ],
+                "value": "nutella"
+              },
+              "id": "nutella"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "ketchup"
+                ],
+                "value": "tomato ketchup"
+              },
+              "id": "tomato_ketchup"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pasta sauces"
+                ],
+                "value": "pasta sauce"
+              },
+              "id": "pasta_sauce"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "mayonnaises"
+                ],
+                "value": "mayonnaise"
+              },
+              "id": "mayonnaise"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "soy sauces"
+                ],
+                "value": "soy sauce"
+              },
+              "id": "soy_sauce"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "green chili sauces"
+                ],
+                "value": "green chili sauce"
+              },
+              "id": "green_chili_sauce"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "soya chunks"
+                ],
+                "value": "soya chunk"
+              },
+              "id": "soya_chunk"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "schezwan sauces",
+                  "schezwan sauce"
+                ],
+                "value": "schezwan"
+              },
+              "id": "schezwan"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "vinegars"
+                ],
+                "value": "vinegar"
+              },
+              "id": "vinegar"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "sweets"
+                ],
+                "value": "sweet"
+              },
+              "id": "sweet"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "raitas"
+                ],
+                "value": "raita"
+              },
+              "id": "raita"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "chutneys"
+                ],
+                "value": "chutney"
+              },
+              "id": "chutney"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "turmerics"
+                ],
+                "value": "turmeric"
+              },
+              "id": "turmeric"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "jeera",
+                  "cumins"
+                ],
+                "value": "cumin"
+              },
+              "id": "cumin"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "garam masalas"
+                ],
+                "value": "garam masala"
+              },
+              "id": "garam_masala"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "coriander powders"
+                ],
+                "value": "coriander powder"
+              },
+              "id": "coriander_powder"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "red chili powders"
+                ],
+                "value": "red chili powder"
+              },
+              "id": "red_chili_powder"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cardamom powders"
+                ],
+                "value": "cardamom powder"
+              },
+              "id": "cardamom_powder"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "black salts"
+                ],
+                "value": "black salt"
+              },
+              "id": "black_salt"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "hing spices",
+                  "asafetida"
+                ],
+                "value": "hing spice"
+              },
+              "id": "hing_spice"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "ajwain",
+                  "carom seeds"
+                ],
+                "value": "carom seed"
+              },
+              "id": "carom_seed"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "doritos",
+                  "pringles",
+                  "cheetos",
+                  "lays",
+                  "kurkure",
+                  "chips"
+                ],
+                "value": "chip"
+              },
+              "id": "chip"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "mixture",
+                  "bhajiya",
+                  "sev",
+                  "chevda",
+                  "khaara",
+                  "farsan",
+                  "namkin"
+                ],
+                "value": "namkeen"
+              },
+              "id": "namkeen"
+            },
+            {
+              "name": {
+                "value": "papad"
+              },
+              "id": "papad"
+            },
+            {
+              "name": {
+                "value": "chyawanprash"
+              },
+              "id": "chyawanprash"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "biscuits"
+                ],
+                "value": "biscuit"
+              },
+              "id": "biscuit"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "disinfectants"
+                ],
+                "value": "disinfectant"
+              },
+              "id": "disinfectant"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "water supplies",
+                  "water bottle",
+                  "water suppply",
+                  "water bottles"
+                ],
+                "value": "water"
+              },
+              "id": "water"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "soda drinks",
+                  "soda drink",
+                  "sodas"
+                ],
+                "value": "soda"
+              },
+              "id": "soda"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "health supplements"
+                ],
+                "value": "health supplement"
+              },
+              "id": "health_supplements"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "health drinks"
+                ],
+                "value": "health drink"
+              },
+              "id": "health_drink"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "soft drinks"
+                ],
+                "value": "soft drink"
+              },
+              "id": "soft_drink"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "energy drinks"
+                ],
+                "value": "energy drink"
+              },
+              "id": "energy_drink"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "juice",
+                  "fruit juices"
+                ],
+                "value": "fruit juice"
+              },
+              "id": "fruit_juice"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "coffees"
+                ],
+                "value": "coffee"
+              },
+              "id": "coffee"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "teas"
+                ],
+                "value": "tea"
+              },
+              "id": "tea"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "buns"
+                ],
+                "value": "bun"
+              },
+              "id": "bun"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "muffins"
+                ],
+                "value": "muffin"
+              },
+              "id": "muffin"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "mouth floss",
+                  "flosses"
+                ],
+                "value": "floss"
+              },
+              "id": "floss"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "mouthwashes"
+                ],
+                "value": "mouthwash"
+              },
+              "id": "mouthwash"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pastes",
+                  "paste",
+                  "toothpaste"
+                ],
+                "value": "toothpaste"
+              },
+              "id": "toothpaste"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "toothbrushes"
+                ],
+                "value": "toothbrush"
+              },
+              "id": "toothbrush"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "makeup supplies"
+                ],
+                "value": "makeup"
+              },
+              "id": "makeup"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "deodrants",
+                  "perfumes",
+                  "deo",
+                  "perfume"
+                ],
+                "value": "deodrant"
+              },
+              "id": "deodrant"
+            },
+            {
+              "name": {
+                "value": "moth dal"
+              },
+              "id": "moth_dal"
+            },
+            {
+              "name": {
+                "value": "chawli dal"
+              },
+              "id": "chwali_dal"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "chana dal"
+                ],
+                "value": "chick pea"
+              },
+              "id": "chick_pea"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "urad dal",
+                  "Split black lentils"
+                ],
+                "value": "split black lentil"
+              },
+              "id": "split_black_lentil"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "kidney beans",
+                  "rajma"
+                ],
+                "value": "kidney bean"
+              },
+              "id": "kidney_bean"
+            },
+            {
+              "name": {
+                "value": "toor dal"
+              },
+              "id": "toor_dal"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "lentils",
+                  "masoor dal"
+                ],
+                "value": "lentil"
+              },
+              "id": "lentil"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "moong dals"
+                ],
+                "value": "moong dal"
+              },
+              "id": "moong_dal"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "sorghums"
+                ],
+                "value": "sorghum"
+              },
+              "id": "sorghum"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "ryes"
+                ],
+                "value": "rye"
+              },
+              "id": "rye"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "millets"
+                ],
+                "value": "millet"
+              },
+              "id": "millet"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "quinoas"
+                ],
+                "value": "quinoa"
+              },
+              "id": "quinoa"
+            },
+            {
+              "name": {
+                "value": "barley"
+              },
+              "id": "barley"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "oats"
+                ],
+                "value": "oat"
+              },
+              "id": "oat"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "wheats"
+                ],
+                "value": "wheat"
+              },
+              "id": "wheat"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "rices"
+                ],
+                "value": "rice"
+              },
+              "id": "rice"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "breads"
+                ],
+                "value": "bread"
+              },
+              "id": "bread"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pastries"
+                ],
+                "value": "pastry"
+              },
+              "id": "pastry"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cakes"
+                ],
+                "value": "cake"
+              },
+              "id": "cake"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "sugars"
+                ],
+                "value": "sugar"
+              },
+              "id": "sugar"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "yeasts"
+                ],
+                "value": "yeast"
+              },
+              "id": "yeast"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cream cheeses"
+                ],
+                "value": "cream cheese"
+              },
+              "id": "cream_cheese"
+            },
+            {
+              "name": {
+                "value": "butter"
+              },
+              "id": "butter"
+            },
+            {
+              "name": {
+                "value": "milk"
+              },
+              "id": "milk"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "eggs"
+                ],
+                "value": "egg"
+              },
+              "id": "egg"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cinnamons"
+                ],
+                "value": "cinnamon"
+              },
+              "id": "cinnamon"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "tea powders"
+                ],
+                "value": "tea powder"
+              },
+              "id": "tea_powder"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cocoa powders"
+                ],
+                "value": "cocoa powder"
+              },
+              "id": "cocoa_powder"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "jams"
+                ],
+                "value": "jam"
+              },
+              "id": "jam"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "vanilla extracts"
+                ],
+                "value": "vanilla extract"
+              },
+              "id": "vanilla_extract"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "brown sugars"
+                ],
+                "value": "brown sugar"
+              },
+              "id": "brown_sugar"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "baking sodas"
+                ],
+                "value": "baking soda"
+              },
+              "id": "baking_soda"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "chocolate chips"
+                ],
+                "value": "chocolate chip"
+              },
+              "id": "chocolate_chip"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "baking powders"
+                ],
+                "value": "baking powder"
+              },
+              "id": "baking_powder"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "baking chocolates"
+                ],
+                "value": "baking chocolate"
+              },
+              "id": "baking_chocolate"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "all purpose flour",
+                  "flours"
+                ],
+                "value": "flour"
+              },
+              "id": "flour"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "frozen foods",
+                  "frozen food",
+                  "frozen goods"
+                ],
+                "value": "frozen good"
+              },
+              "id": "frozen_goods"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "frozen edamames"
+                ],
+                "value": "frozen edamame"
+              },
+              "id": "frozen_edamame"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "chochips ice cream",
+                  "strawberry ice cream",
+                  "mango ice cream",
+                  "chocolate ice cream",
+                  "vanilla ice cream",
+                  "ice creams"
+                ],
+                "value": "ice cream"
+              },
+              "id": "ice_cream"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "frozen peas"
+                ],
+                "value": "frozen pea"
+              },
+              "id": "frozen_pea"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "brocollis"
+                ],
+                "value": "brocolli"
+              },
+              "id": "brocolli"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "fresheners",
+                  "freshener",
+                  "air fresheners"
+                ],
+                "value": "air freshener"
+              },
+              "id": "freshener"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "lotions"
+                ],
+                "value": "lotion"
+              },
+              "id": "lotion"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "blankets"
+                ],
+                "value": "blanket"
+              },
+              "id": "blanket"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "sheets",
+                  "sheet",
+                  "bedsheets"
+                ],
+                "value": "bedsheet"
+              },
+              "id": "bedsheet"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "hand sanitizers",
+                  "hand sanitizer",
+                  "sanitizers"
+                ],
+                "value": "sanitizer"
+              },
+              "id": "sanitizer"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "medications",
+                  "medicines",
+                  "medicine",
+                  "meds",
+                  "med"
+                ],
+                "value": "medication"
+              },
+              "id": "medication"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "lights"
+                ],
+                "value": "light"
+              },
+              "id": "light"
+            },
+            {
+              "name": {
+                "value": "body wash"
+              },
+              "id": "body_wash"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "face washes"
+                ],
+                "value": "face wash"
+              },
+              "id": "face_wash"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "first aid kits"
+                ],
+                "value": "first aid kit"
+              },
+              "id": "first_aid_kit"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "napkins"
+                ],
+                "value": "napkin"
+              },
+              "id": "napkin"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "tissues"
+                ],
+                "value": "tissue"
+              },
+              "id": "tissue"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "batteries"
+                ],
+                "value": "battery"
+              },
+              "id": "battery"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "gloves"
+                ],
+                "value": "glove"
+              },
+              "id": "glove"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cleaning liquids"
+                ],
+                "value": "cleaning liquid"
+              },
+              "id": "cleaning_liquid"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cotton swabs"
+                ],
+                "value": "cotton swab"
+              },
+              "id": "cotton_swab"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "conditioners"
+                ],
+                "value": "conditioner"
+              },
+              "id": "conditioner"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "shampoos"
+                ],
+                "value": "shampoo"
+              },
+              "id": "shampoo"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "soaps"
+                ],
+                "value": "soap"
+              },
+              "id": "soap"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "hand soaps"
+                ],
+                "value": "hand soap"
+              },
+              "id": "hand_soap"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "toiler_papers"
+                ],
+                "value": "toilet paper"
+              },
+              "id": "toilet_paper"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "lint rollers"
+                ],
+                "value": "lint roller"
+              },
+              "id": "lint_roller"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "fabric softeners"
+                ],
+                "value": "fabric softener"
+              },
+              "id": "fabric_softener"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "bleaches"
+                ],
+                "value": "bleach"
+              },
+              "id": "bleach"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "dryer sheets"
+                ],
+                "value": "dryer sheet"
+              },
+              "id": "dryer_sheet"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "laundry detergents",
+                  "laundry detergent",
+                  "laundry soaps"
+                ],
+                "value": "laundry soap"
+              },
+              "id": "laundry_soap/detergent"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "bags",
+                  "bag",
+                  "cloth bags",
+                  "cloth bag",
+                  "plastic bags",
+                  "plastic bag",
+                  "carry bags"
+                ],
+                "value": "carry bag"
+              },
+              "id": "carry_bag"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "dustbin bag",
+                  "dustbin bags",
+                  "bin bags",
+                  "bin bag",
+                  "trash bags"
+                ],
+                "value": "trash bag"
+              },
+              "id": "trash_bag"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "foil sheet",
+                  "wrapping foil",
+                  "aluminium foils"
+                ],
+                "value": "aluminium foil"
+              },
+              "id": "aluminium_foil"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "plastic wraps"
+                ],
+                "value": "plastic wrap"
+              },
+              "id": "plastic_wrap"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "sponges"
+                ],
+                "value": "sponge"
+              },
+              "id": "sponge"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "towels"
+                ],
+                "value": "towel"
+              },
+              "id": "towel"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "dish cleaning liquids",
+                  "dish detergents",
+                  "dish soaps",
+                  "dish cleaning liquid",
+                  "dish cleaner",
+                  "dish detergent"
+                ],
+                "value": "dish soap"
+              },
+              "id": "dish_soap"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cat collar",
+                  "dog collar",
+                  "collars",
+                  "animal collar",
+                  "pet collar"
+                ],
+                "value": "collar"
+              },
+              "id": "collar"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "dog leash",
+                  "animal leash",
+                  "pet leash",
+                  "leashes"
+                ],
+                "value": "leash"
+              },
+              "id": "leash"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pet poop disposal",
+                  "animal poop disposal",
+                  "poop disposals"
+                ],
+                "value": "poop disposal"
+              },
+              "id": "poop_disposal"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "animal nail trimmers",
+                  "animal nail trimmer",
+                  "pet nail trimmers"
+                ],
+                "value": "pet nail trimmer"
+              },
+              "id": "pet_nail_trimmer"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "animal toothbrushes",
+                  "animal toothbrush",
+                  "pet toothbrushes"
+                ],
+                "value": "pet toothbrush"
+              },
+              "id": "pet_toothbrush"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "animal brushes",
+                  "animal brush",
+                  "pet brushes"
+                ],
+                "value": "pet brush"
+              },
+              "id": "pet_brush"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "animal toys",
+                  "animal toy",
+                  "pet toys"
+                ],
+                "value": "pet toy"
+              },
+              "id": "pet_toy"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cat treats",
+                  "cat treat",
+                  "dog treats",
+                  "dog treat",
+                  "animal treat",
+                  "pet treat"
+                ],
+                "value": "pet treat"
+              },
+              "id": "pet_treat"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "animal beds",
+                  "animal bed",
+                  "pet beds"
+                ],
+                "value": "pet bed"
+              },
+              "id": "pet_bed"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "animal medicines",
+                  "animal meds",
+                  "pet meds",
+                  "pet medicines",
+                  "animal first aid kit",
+                  "first aid kit"
+                ],
+                "value": "pet first aid kit"
+              },
+              "id": "pet_first_aid_kit"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cat tags",
+                  "cat tag",
+                  "dog tags",
+                  "dog tag",
+                  "animal name tags",
+                  "animal name tag",
+                  "pet name tags",
+                  "name tags",
+                  "name tag"
+                ],
+                "value": "pet name tag"
+              },
+              "id": "name_tag"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "animal water bowls",
+                  "animal water bowl",
+                  "animal food bowls",
+                  "animal food bowl",
+                  "pet food bowls",
+                  "pet food bowl",
+                  "pet water bowls",
+                  "pet water bowl",
+                  "animal cutleries",
+                  "animal cutlery",
+                  "pet cutleries"
+                ],
+                "value": "pet cutlery"
+              },
+              "id": "pet_cutlery"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "animal foods",
+                  "animal food",
+                  "pet foods"
+                ],
+                "value": "pet food"
+              },
+              "id": "pet_food"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "shakarkandi",
+                  "sweet potatoes"
+                ],
+                "value": "sweet potato"
+              },
+              "id": "sweet_potato"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "palak"
+                ],
+                "value": "spinach"
+              },
+              "id": "spinach"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "turai",
+                  "ridge gourds"
+                ],
+                "value": "ridge gourd"
+              },
+              "id": "ridge_gourd"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "mooli",
+                  "radishes"
+                ],
+                "value": "radish"
+              },
+              "id": "radish"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "tendli",
+                  "ivy gourds"
+                ],
+                "value": "ivy gourd"
+              },
+              "id": "ivy_gourd"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pudina"
+                ],
+                "value": "mint leaves"
+              },
+              "id": "mint_leaves"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "mushrooms"
+                ],
+                "value": "mushroom"
+              },
+              "id": "mushroom"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "sarso"
+                ],
+                "value": "mustard leaves"
+              },
+              "id": "mustard_leaves"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "okra",
+                  "bhindi",
+                  "ladyfingers"
+                ],
+                "value": "ladyfinger"
+              },
+              "id": "ladyfinger"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "aloo",
+                  "potatoes"
+                ],
+                "value": "potato"
+              },
+              "id": "potato"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pyaaz",
+                  "onions "
+                ],
+                "value": "onion"
+              },
+              "id": "onion"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "matar",
+                  "green peas"
+                ],
+                "value": "green pea"
+              },
+              "id": "green_pea"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "hari mirch",
+                  "green chilis"
+                ],
+                "value": "green chili"
+              },
+              "id": "green_chili"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "adrak"
+                ],
+                "value": "ginger"
+              },
+              "id": "ginger"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "lahsun"
+                ],
+                "value": "garlic"
+              },
+              "id": "garlic"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "french beans"
+                ],
+                "value": "french bean"
+              },
+              "id": "french_bean"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "methi"
+                ],
+                "value": "fenugreek leaves"
+              },
+              "id": "fenugree_leaves"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "baingan",
+                  "brinjal",
+                  "eggplants"
+                ],
+                "value": "eggplant"
+              },
+              "id": "eggplant"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "drumsticks"
+                ],
+                "value": "drumstick"
+              },
+              "id": "drumstick"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "kari patta"
+                ],
+                "value": "curry leaves"
+              },
+              "id": "curry_leaves"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "corns",
+                  "bhutta",
+                  "makkai"
+                ],
+                "value": "corn"
+              },
+              "id": "corn"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "hara dhania",
+                  "coriander leaves",
+                  "cilantro",
+                  "corianders"
+                ],
+                "value": "coriander"
+              },
+              "id": "coriander"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cauliflowers",
+                  "phool gobi"
+                ],
+                "value": "cauliflower"
+              },
+              "id": "cauliflower"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "patta gobi",
+                  "cabbages"
+                ],
+                "value": "cabbage"
+              },
+              "id": "cabbage"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "karela",
+                  "bitter gourds"
+                ],
+                "value": "bitter gourd"
+              },
+              "id": "bitter_gourd"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "shimla mirch",
+                  "bell pepper",
+                  "capsicums",
+                  "bell peppers"
+                ],
+                "value": "capsicum"
+              },
+              "id": "capsicum"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "chukandar",
+                  "beetroots"
+                ],
+                "value": "beetroot"
+              },
+              "id": "beetroot"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "kismis",
+                  "raisins"
+                ],
+                "value": "raisin"
+              },
+              "id": "raisin"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "akhrot",
+                  "walnuts"
+                ],
+                "value": "walnut"
+              },
+              "id": "walnut"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "kopra",
+                  "dry coconuts"
+                ],
+                "value": "dry coconut"
+              },
+              "id": "dry_coconut"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "supari",
+                  "betel nuts"
+                ],
+                "value": "betel nut"
+              },
+              "id": "betel_nut"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "mungfali",
+                  "peanuts"
+                ],
+                "value": "peanut"
+              },
+              "id": "peanut"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "hazelnuts"
+                ],
+                "value": "hazelnut"
+              },
+              "id": "hazelnut"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "khajoor",
+                  "dates"
+                ],
+                "value": "date"
+              },
+              "id": "date"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "kajus",
+                  "kaju",
+                  "cashews"
+                ],
+                "value": "cashew"
+              },
+              "id": "cashew"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pistas",
+                  "pista",
+                  "pistachios"
+                ],
+                "value": "pistachio"
+              },
+              "id": "pistachio"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "badam",
+                  "almonds"
+                ],
+                "value": "almond"
+              },
+              "id": "almond"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "muskmelons"
+                ],
+                "value": "muskmelon"
+              },
+              "id": "muskmelon"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "tangerines"
+                ],
+                "value": "tangerine"
+              },
+              "id": "tangerine"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "strawberries"
+                ],
+                "value": "strawberry"
+              },
+              "id": "strawberry"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "rasberries"
+                ],
+                "value": "rasberry"
+              },
+              "id": "rasberry"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pineberries"
+                ],
+                "value": "pineberry"
+              },
+              "id": "pineberry"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pears"
+                ],
+                "value": "pear"
+              },
+              "id": "pear"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "peaches"
+                ],
+                "value": "peach"
+              },
+              "id": "peach"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "papayas"
+                ],
+                "value": "papaya"
+              },
+              "id": "papaya"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "mulberries"
+                ],
+                "value": "mulberry"
+              },
+              "id": "mulberry"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "watermelons"
+                ],
+                "value": "watermelon"
+              },
+              "id": "watermelon"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "mangoes"
+                ],
+                "value": "mango"
+              },
+              "id": "mango"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "lemons"
+                ],
+                "value": "lemon"
+              },
+              "id": "lemon"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "kiwis"
+                ],
+                "value": "kiwi"
+              },
+              "id": "kiwi"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "plums"
+                ],
+                "value": "plum"
+              },
+              "id": "plum"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "jackfruits"
+                ],
+                "value": "jackfruit"
+              },
+              "id": "jackfruit"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "guavas"
+                ],
+                "value": "guava"
+              },
+              "id": "guava"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "grapes"
+                ],
+                "value": "grape"
+              },
+              "id": "grape"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "dragonfruits"
+                ],
+                "value": "dragonfruit"
+              },
+              "id": "dragonfruit"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cucumbers"
+                ],
+                "value": "cucumber"
+              },
+              "id": "cucumber"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "coconuts"
+                ],
+                "value": "coconut"
+              },
+              "id": "coconut"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cherries"
+                ],
+                "value": "cherry"
+              },
+              "id": "cherry"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "blueberries"
+                ],
+                "value": "blueberry"
+              },
+              "id": "blueberry"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "blackberries"
+                ],
+                "value": "blackberry"
+              },
+              "id": "blackberry"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "avocados"
+                ],
+                "value": "avocado"
+              },
+              "id": "avocado"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "khumani",
+                  "apricots"
+                ],
+                "value": "apricot"
+              },
+              "id": "apricot"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "apples"
+                ],
+                "value": "apple"
+              },
+              "id": "apple"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "bananas"
+                ],
+                "value": "banana"
+              },
+              "id": "banana"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "oranges"
+                ],
+                "value": "orange"
+              },
+              "id": "orange"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "oranges"
+                ],
+                "value": "mandarin"
+              },
+              "id": "mandarin"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "pineapples"
+                ],
+                "value": "pineapple"
+              },
+              "id": "pineapple"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "tamatar",
+                  "tomatoes"
+                ],
+                "value": "tomato"
+              },
+              "id": "tomato"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "gajar",
+                  "carrots"
+                ],
+                "value": "carrot"
+              },
+              "id": "carrot"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "kaddu",
+                  "pumpkins"
+                ],
+                "value": "pumpkin"
+              },
+              "id": "pumpkin"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "lettuces"
+                ],
+                "value": "lettuce"
+              },
+              "id": "lettuce"
+            }
+          ],
+          "name": "Product"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "the grocery list",
+                  "list of groceries",
+                  "grocery list",
+                  "the cart",
+                  "my cart",
+                  "shopping cart",
+                  "the shopping cart",
+                  "my shopping cart",
+                  "shopping bag",
+                  "the shopping bag",
+                  "my shopping bag",
+                  "shopping list",
+                  "the shopping list",
+                  "my shopping list"
+                ],
+                "value": "cart"
+              },
+              "id": "cart"
+            }
+          ],
+          "name": "cart"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "synonyms": [
+                  "frees",
+                  "free",
+                  "cleans",
+                  "clean",
+                  "clear all",
+                  "empty all",
+                  "empties",
+                  "empty",
+                  "clears"
+                ],
+                "value": "clear"
+              },
+              "id": "clear"
+            },
+            {
+              "name": {
+                "synonyms": [
+                  "cut out",
+                  "checks",
+                  "check",
+                  "check off",
+                  "cancel",
+                  "take out",
+                  "removes",
+                  "remove ",
+                  "deletes"
+                ],
+                "value": "delete"
+              },
+              "id": "delete"
+            }
+          ],
+          "name": "delete"
+        }
+      ],
+      "invocationName": "grocery list",
+      "modelConfiguration": {
+        "fallbackIntentSensitivity": {
+          "level": "HIGH"
+        }
+      }
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "This prompt is a dummy included only to ensure there is a dialog model present."
+          }
+        ],
+        "id": "Slot.Validation.564246223579.1467418044248.678461230495"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please input values between one and fifty"
+          }
+        ],
+        "id": "Slot.Validation.1410373627522.313096995747.1009281314333"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please input values between one and fifty"
+          }
+        ],
+        "id": "Slot.Validation.1410373627522.313096995747.957322659387"
+      }
+    ]
+  }
+}
